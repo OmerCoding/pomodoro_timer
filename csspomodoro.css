@@ -1,0 +1,19 @@
+* {
+  color: red;
+  border: 1px solid black;
+  font-family: sans-serif;
+}
+
+#main {
+  margin: auto;
+  width: 600px;
+}
+
+.title {
+  border: 2px solid green;
+}
+
+#tit {
+  float: right;
+  font-size: 40px;
+}
