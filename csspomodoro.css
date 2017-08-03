@@ -17,3 +17,7 @@
   float: right;
   font-size: 40px;
 }
+
+.buttoms {
+  display: inline-flex;
+}
