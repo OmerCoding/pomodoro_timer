@@ -12,9 +12,9 @@ $(document).on("click", ".start_but", function(){
   on = true;
   var min = $('#min').html();
   var sec = $('#sec').html();
-  if (work == true && min == $('#work').html()){
+  if (work && min == $('#work').html()){
     work = !work;
-  } else if (work == false && min == $('#rest').html()){
+  } else if (!work && min == $('#rest').html()){
     work = !work;
   }
   $('.start_but').html("stop");
@@ -69,13 +69,21 @@ $(document).on("click", "#up", function(){
   var min_value = $('#work').html();
   min_value++;
   $('#work').html(min_value);
+  if (!on && work) {
+    $('#min').html(min_value);
+  }
 });
 
 $(document).on("click", "#down", function(){
   var min_value = $('#work').html();
   min_value--;
   $('#work').html(min_value);
+  if (!on && work) {
+    $('#min').html(min_value);
+  }
 });
+
+
 
 // look for problem in raise min -> start -> reset. work needed on when to use
 // rest min and when to use work min
