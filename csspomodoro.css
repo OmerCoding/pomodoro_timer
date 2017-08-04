@@ -1,23 +1,131 @@
 * {
   color: red;
+  font-family: Arial;
   border: 1px solid black;
-  font-family: sans-serif;
 }
 
 #main {
   margin: auto;
-  width: 600px;
+  width: 700px;
 }
 
 .title {
-  border: 2px solid green;
 }
 
 #tit {
   float: right;
-  font-size: 40px;
+  font-size: 60px;
+}
+
+#start {
+  width: 40px;
+  height: 40px;
+}
+
+#stop {
+  width: 40px;
+  height: 40px;
+}
+
+#pause {
+  width: 40px;
+  height: 40px;
+  display: none;
+}
+
+#start, #pause {
+  margin-left: 250px;
+  margin-right: 100px;
+}
+
+#tomato {
+  width: 150px;
+  height: 150px;
+}
+
+#min {
+  float: left;
+  margin-left: 80px;
+  padding: 0px 50px;
+}
+
+.timer {
+  margin-top: 30px;
 }
 
 .buttoms {
-  display: inline-flex;
+  margin-top: 140px;
+  margin-bottom: 20px;
+}
+
+.start_but, .stop_but {
+  float: left;
+}
+
+.change {
+  margin-top: 0px;
+  display: inline-block;
+}
+
+.reset {
+  float: left;
+}
+
+#mid {
+  float: left;
+  margin: 0px 50px;
+}
+
+#sec {
+  float: left;
+  padding: 0px 50px;
+}
+
+#mid, #min, #sec {
+  font-size: 100px;
+}
+
+#up_arr1 , #down_arr2, #up_arr2, #down_arr1 {
+  width: 20px;
+  height: 20px;
+  margin: 20px 30px;
+}
+
+#up1, #work, #down1, #rest, #down2, #up2 {
+  float: left;
+}
+
+#work, #rest {
+  font-size: 50px;
+}
+
+#down2 {
+  margin-left: 75px;
+}
+
+#down1 {
+  margin-left: 103px;
+}
+
+#rights {
+  margin-left: -220px;
+  margin-top: 30px;
+  font-size: 17px;
+}
+
+.text {
+  margin-top: 20px;
+  display: inline-block;
+}
+
+#w_ses, #r_ses {
+  float: left;
+}
+
+#w_ses {
+  margin-left: 150px;
+}
+
+#r_ses {
+  margin-left: 175px;
 }

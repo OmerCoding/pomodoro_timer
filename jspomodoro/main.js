@@ -12,18 +12,14 @@ $(document).on("click", ".start_but", function(){
   on = true;
   var min = $('#min').html();
   var sec = $('#sec').html();
-  if (work && min == $('#work').html()){
-    work = !work;
-  } else if (!work && min == $('#rest').html()){
-    work = !work;
-  }
-  $('.start_but').html("stop");
+  $(this).find('img').toggle();
   $(this).addClass("stop_but");
   $(this).removeClass("start_but");
   inter = setInterval(function(){
     if (sec == 0) {
       if (min == 0){
         on = false;
+        work = !work;
         clearInterval(inter);
         sec = 1;
         if (work){
@@ -31,12 +27,12 @@ $(document).on("click", ".start_but", function(){
         } else {
           min = $('#rest').html();
         }
-        $('.stop_but').html("start_again");
+        $('.stop_but').find('img').toggle();
         $('.stop_but').addClass("start_but");
         $('.stop_but').removeClass("stop_but");
       }
       else {
-      sec = 5;
+      sec = 60;
       min--;
       }
     }
@@ -47,25 +43,28 @@ $(document).on("click", ".start_but", function(){
 
 $(document).on("click", ".stop_but", function(){
   clearInterval(inter);
-  $('.stop_but').html("start");
+  $(this).find('img').toggle();
   $(this).addClass("start_but");
   $(this).removeClass("stop_but");
 });
 
 $(document).on("click", ".reset", function(){
   clearInterval(inter);
-  $('.stop_but, .start_but').html("start_again");
-  $('#sec').html("0");
   if (on) {
+    on = false;
+    $('.stop_but').find('img').toggle();
+    $(".stop_but").addClass("start_but");
+    $(".start_but").removeClass("stop_but");
+    $('#sec').html("0");
     if (work) {
-      $('#min').html($('#rest').html());
-    } else {
       $('#min').html($('#work').html());
+    } else {
+      $('#min').html($('#rest').html());
     }
   }
 });
 
-$(document).on("click", "#up", function(){
+$(document).on("click", "#up_arr1", function(){
   var min_value = $('#work').html();
   min_value++;
   $('#work').html(min_value);
@@ -74,16 +73,33 @@ $(document).on("click", "#up", function(){
   }
 });
 
-$(document).on("click", "#down", function(){
+$(document).on("click", "#down_arr1", function(){
   var min_value = $('#work').html();
-  min_value--;
+  if (min_value > 0){
+    min_value--;
+  }
   $('#work').html(min_value);
   if (!on && work) {
     $('#min').html(min_value);
   }
 });
 
+$(document).on("click", "#up_arr2", function(){
+  var min_value = $('#rest').html();
+  min_value++;
+  $('#rest').html(min_value);
+  if (!on && !work) {
+    $('#min').html(min_value);
+  }
+});
 
-
-// look for problem in raise min -> start -> reset. work needed on when to use
-// rest min and when to use work min
+$(document).on("click", "#down_arr2", function(){
+  var min_value = $('#rest').html();
+  if (min_value > 0){
+    min_value--;
+  }
+  $('#rest').html(min_value);
+  if (!on && !work) {
+    $('#min').html(min_value);
+  }
+});
