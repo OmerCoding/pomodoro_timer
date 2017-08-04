@@ -1,7 +1,5 @@
 * {
-  color: red;
   font-family: Arial;
-  border: 1px solid black;
 }
 
 #main {
@@ -9,17 +7,23 @@
   width: 700px;
 }
 
-.title {
-}
-
 #tit {
+  color: #c10f0f;
   float: right;
   font-size: 60px;
+}
+
+#tit.hover {
+  
 }
 
 #start {
   width: 40px;
   height: 40px;
+}
+
+#start:hover, #pause:hover, #stop:hover, #down_arr1:hover, #down_arr2:hover, #up_arr1:hover, #up_arr2:hover {
+  cursor: pointer;
 }
 
 #stop {
@@ -34,7 +38,7 @@
 }
 
 #start, #pause {
-  margin-left: 250px;
+  margin-left: 274px;
   margin-right: 100px;
 }
 
@@ -44,6 +48,7 @@
 }
 
 #min {
+  border: 4px black solid;
   float: left;
   margin-left: 80px;
   padding: 0px 50px;
@@ -54,7 +59,7 @@
 }
 
 .buttoms {
-  margin-top: 140px;
+  margin-top: 210px;
   margin-bottom: 20px;
 }
 
@@ -74,9 +79,11 @@
 #mid {
   float: left;
   margin: 0px 50px;
+  margin-top: -9px;
 }
 
 #sec {
+  border: 4px black solid;
   float: left;
   padding: 0px 50px;
 }
@@ -109,12 +116,12 @@
 
 #rights {
   margin-left: -220px;
-  margin-top: 30px;
+  margin-top: 7px;
   font-size: 17px;
 }
 
 .text {
-  margin-top: 20px;
+  margin-top: 50px;
   display: inline-block;
 }
 
@@ -123,9 +130,9 @@
 }
 
 #w_ses {
-  margin-left: 150px;
+  margin-left: 160px;
 }
 
 #r_ses {
-  margin-left: 175px;
+  margin-left: 200px;
 }
